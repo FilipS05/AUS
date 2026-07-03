@@ -111,7 +111,7 @@
     .feedback-line.ok { background: var(--ok-bg); color: var(--ok-text); }
     .feedback-line.bad { background: var(--bad-bg); color: var(--bad-text); }
 
-    #mapArea { display: none; }
+    #mapArea { display: block; }
 
     #map {
       height: 320px;
@@ -465,7 +465,6 @@
     function hideResultArea() {
       feedbackEl.className = "";
       feedbackEl.innerHTML = "";
-      mapAreaEl.style.display = "none";
       nextBtn.classList.add("hidden");
       submitBtn.disabled = false;
     }
@@ -478,6 +477,7 @@
       updateMeta();
       hideResultArea();
       clearInputs();
+      showCityMap(prev, city);
     }
 
     function finishQuiz() {
