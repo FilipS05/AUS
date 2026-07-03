@@ -441,6 +441,19 @@
       );
     }
 
+    function showEmptyMap() {
+      const mapEl = document.getElementById("map");
+      mapEl.innerHTML =
+        `<div class="map-note">Australia states map (non-interactive)</div>` +
+        `<div class="map-canvas">` +
+        `<img class="map-image" src="data/australia_states_map.jpg" alt="Australia states and territories map" />` +
+        `<div class="marker-layer"></div>` +
+        `</div>`;
+
+      mapCaptionEl.textContent = "Map is hidden until you submit your answer.";
+      mapAreaEl.style.display = "block";
+    }
+
     function showCityMap(prevCity, city) {
       const mapEl = document.getElementById("map");
       mapEl.innerHTML =
@@ -477,7 +490,7 @@
       updateMeta();
       hideResultArea();
       clearInputs();
-      showCityMap(prev, city);
+      showEmptyMap();
     }
 
     function finishQuiz() {
